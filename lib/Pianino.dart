@@ -2,13 +2,17 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:audiofileplayer/audiofileplayer.dart';
 
+Audio audioLoop = Audio.load('assets/bells.mp3', looping: true, playInBackground: true);
+bool audiostatus = false;
+String text = "Loop";
+
 class Pianino extends StatefulWidget {
   @override
   State<Pianino> createState() => _PianinoState();
 }
 
 class _PianinoState extends State<Pianino> {
-  Audio audioLoop = Audio.load('assets/bells.mp3', looping: true, playInBackground: true);
+
 
   Expanded Klawisz({required int nrKlawisza}) {
     return Expanded(
@@ -28,8 +32,6 @@ class _PianinoState extends State<Pianino> {
     );
   }
 
-bool audiostatus = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,14 +48,16 @@ bool audiostatus = false;
                     });
                     if(audiostatus == true){
                       audioLoop.play();
+                      text = "Play";
                     }else {
-                      audioLoop.dispose();
+                      audioLoop.pause();
+                      text = "Pause";
                     }
                   },
                   color: Colors.blue,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [Text('Loop')],
+                    children: [Text(text)],
                   ),
                 ),
               ),
