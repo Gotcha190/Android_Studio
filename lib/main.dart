@@ -5,6 +5,7 @@ import 'package:image_size_getter/image_size_getter.dart';
 import 'package:image_size_getter/file_input.dart';
 import 'CarouselDemo.dart';
 import 'Pianino.dart';
+import 'TextGame/TextGame.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
             '/': (ctx) => MyHomePage(),
             '/carouselDemo': (ctx) => CarouselDemo(),
             '/pianino': (ctx) => Pianino(),
+            '/TextGame/textGame': (ctx) => TextGame(),
           },
         );
       },
@@ -66,7 +68,8 @@ class MyHomePage extends StatelessWidget {
       body: ListView(
         children: <Widget>[
           DemoItem('Carousel Demo', '/carouselDemo'),
-          DemoItem('Pianino', '/pianino')
+          DemoItem('Pianino', '/pianino'),
+          DemoItem('Text Game','/TextGame/textGame'),
         ],
       ),
     );
