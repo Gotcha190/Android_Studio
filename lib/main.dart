@@ -1,11 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+//import 'package:carousel_slider/carousel_slider.dart';
 import 'package:image_size_getter/image_size_getter.dart';
 import 'package:image_size_getter/file_input.dart';
 import 'CarouselDemo.dart';
 import 'Pianino.dart';
 import 'TextGame/TextGame.dart';
+import 'Quizgame/Quizgame.dart';
+import 'BusinessCard.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,6 +29,8 @@ class MyApp extends StatelessWidget {
             '/carouselDemo': (ctx) => CarouselDemo(),
             '/pianino': (ctx) => Pianino(),
             '/TextGame/textGame': (ctx) => TextGame(),
+            '/QuizGame/quizGame': (ctx) => QuizGame(),
+            '/businesscard': (ctx) => BusinessCard(),
           },
         );
       },
@@ -70,6 +74,8 @@ class MyHomePage extends StatelessWidget {
           DemoItem('Carousel Demo', '/carouselDemo'),
           DemoItem('Pianino', '/pianino'),
           DemoItem('Text Game','/TextGame/textGame'),
+          DemoItem('Quiz Game','/QuizGame/quizGame'),
+          DemoItem('Card', '/businesscard'),
         ],
       ),
     );
